@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숙제</title>
+
+    <style>
+        a{
+            color: black;
+            text-decoration: none;
+        }
+
+        .eventList{
+            box-sizing: border-box;
+            width:1180px;
+            margin: 80px auto;
+        }
+
+        .eventList:after{content: "";display: block;clear: both;}
+
+        .contents{
+            box-sizing: border-box;
+            width:calc(100% / 3);
+            height: 330px;
+            float: left;
+        }
+
+        figure{
+            box-sizing: border-box;
+            width:370px;
+            height:180px;
+            margin: 20px auto;
+        }
+
+        figure img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+        }
+
+        h1{
+            font-size: 1.1rem;
+            width:370px;
+            margin: 20px auto;
+            overflow: hidden;
+            white-space: normal;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            word-break: keep-all;
+            text-overflow:ellipsis;
+        }
+
+        p{
+            width:370px;
+            margin: 0px auto;
+            box-sizing: border-box;
+        }
+
+        .content{
+            margin-bottom: 10px;
+        }
+
+        .date{
+            color:#8b8b8b;
+        }
+    </style>
+</head>
+<body>
+    <!-- 참고사이트 -->
+    <!-- https://www.pearlabyss.com/ko-KR/Board/Media -->
+    <!--
+        다음 페이지의 내용을 보고 알맞은 데이터형태를 구성해보시오~!
+        완성시안 및 사이트 참고
+        1.태그형태는 아래에 주어진 eventList클래스 안에 적절히 들어갈 수 있도록 자유롭게 구성할 것.
+        2.배열과 객체를 적절히 활용하여 데이터를 구성할 것
+        3.innerHTML 를 활용해볼 것
+
+        tip)
+        let a = '';
+        a+='화'
+        a+='이'
+        a+='팅'
+
+    -->
+    <div class="wrap">
+        <div class="eventList"></div>
+        <div class="eventList" id="event"></div>
+    </div>
+
+    <script>
+
+        let Gamelist = [
+            {image:"./img/img1.jpg" ,title : "(완료)2021 검은사막 칼페온 연회" , description: "2021 검은사막 칼페온 연회 안내", date: "2021-12-11"},
+            {image:"./img/img2.jpg" ,title : "(완료)2021 검은사막 하이델 연회" , description: "2021 검은사막 하이델 연회 안내", date: "2021-11-11"},
+            {image:"./img/img3.jpg" ,title : "(완료)붉은사막 TGA 2020 미디어 브리핑" , description: "붉은사막 TGA 2020 미디어 브리핑 안내", date: "2022-10-11"},
+            {image:"./img/img4.jpg" ,title : "(완료)검은사막 PC X Mobile X Console 칼페ON 연회" , description: "검은사막 PC X Mobile X Console 칼페ON 연회 안내", date: "2021-12-12"},
+            {image:"./img/img5.jpg" ,title : "(완료)하이델 연회 AT HOME 진행" , description: "하이델 연회 AT HOME 진행 안내", date: "2020-09-11"},
+            {image:"./img/img6.jpg" ,title : "(완료)섀도우 아레나 릴레이 인터뷰 안내" , description: "섀도우 아레나 릴레이 인터뷰를 진행합니다", date: "2021-08-23"}
+        ]
+
+        let Gamelist2 = [
+            {image:"./img/img1.jpg" ,title : "(완료)2021 검은사막 칼페온 연회" , description: "2021 검은사막 칼페온 연회 안내", date: "2021-12-11"},
+            {image:"./img/img2.jpg" ,title : "(완료)2021 검은사막 하이델 연회" , description: "2021 검은사막 하이델 연회 안내", date: "2021-11-11"},
+            {image:"./img/img3.jpg" ,title : "(완료)붉은사막 TGA 2020 미디어 브리핑" , description: "붉은사막 TGA 2020 미디어 브리핑 안내", date: "2022-10-11"},
+            {image:"./img/img4.jpg" ,title : "(완료)검은사막 PC X Mobile X Console 칼페ON 연회" , description: "검은사막 PC X Mobile X Console 칼페ON 연회 안내", date: "2021-12-12"},
+            {image:"./img/img5.jpg" ,title : "(완료)하이델 연회 AT HOME 진행" , description: "하이델 연회 AT HOME 진행 안내", date: "2020-09-11"},
+            {image:"./img/img6.jpg" ,title : "(완료)섀도우 아레나 릴레이 인터뷰 안내" , description: "섀도우 아레나 릴레이 인터뷰를 진행합니다", date: "2021-08-23"}
+        ]
+
+
+
+        function showList(selector,GArray){
+            let list = '';
+            for(let i = 0; i<GArray.length; i++){
+                list += `
+                <a href="#" class="contents">
+                <figure>
+                    <img src="${GArray[i].image}" alt="${GArray[i].title}">
+                </figure>
+                <h1>${GArray[i].title}</h1>
+                <p class="content">${GArray[i].description}</p>
+                <p class="date">${GArray[i].date}</p>
+                </a>`
+            }
+            document.querySelector(selector).innerHTML = list;
+            return GArray
+        }
+        let array = showList(".eventList",Gamelist)
+        showList("#event",Gamelist2)
+
+        console.log(array)
+        
+
+    </script>
+</body>
+</html>
