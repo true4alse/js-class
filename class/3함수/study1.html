@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+</head>
+<body>
+    <h1>함수 - function</h1>
+    <p>자바스크립트에서 어떤 동작을 하기위한 도구</p>
+    <p>빵만드는기계(함수)</p>
+    <h2>표준함수와/사용자정의함수</h2>
+    <p>표준함수란 내가만들지않아도 누군가가 사용할 수 있도록 미리 만들어진 함수</p>
+    <p>사용자정의함수는 사용자가 직접 함수를 정의하고 사용하는 함수</p>
+    <p>함수를 만드는 부분 - 정의부</p>
+    <p>함수를 실행하는 부분 - 실행부(호출부)</p>
+    <p>function 함수명(재료1,재료2,재료3){실행동작}</p>
+    <p>호출하는 부분에서는 함수명() / ()는 실행한다 라는 뜻.</p>
+    <p>function 키워드를 사용해서 함수를 정의하면 언제나 최상단으로 끌려올라와서 먼저 정의가 된다(함수의 호이스팅)</p>
+    <script>
+        // alert()
+        // document.write("내용")
+        function a(){
+            document.write("하하하<br>")
+        }
+        a();a();a();
+    </script>
+    <h1>함수의 특징</h1>
+    <p>함수는 정의하는 부분에서 재료투입구(매개변수)를 콤마를 사용하여 여러개를 입력할 수 있다.</p>
+    <p>함수에서 정의한 매개변수는 함수안에서만 사용이되고 밖에서는 접근할 수 없다.</p>
+    <script>
+        function b(name){
+            document.write(name.first)
+            document.write("<br>")
+            document.write(name.last)
+            document.write("<br>")
+        }
+        b({first:"정",last:"현진"})
+        b({
+            first:"김",
+            last:"지우"
+        })
+        b({
+            first:"우",
+            last:"민지"
+        })
+        // let person = {gender:"남자",age:23}
+        // person.gender
+        // person.age
+    </script>
+    <p>함수안에서 return 구문을 만나면 함수가 종료됨과 동시에 return 우측의 값을 그 자리에 남긴다.</p>
+    <script>
+        function c(){
+            return 5;
+            alert("이건 실행되지 않습니다.")
+        }
+        console.log(c()+c())
+    </script>
+    <p>함수도 데이터형태이기때문에 변수에 저장될 수 있다.</p>
+    <p>함수의 호이스팅은 되지않지만, 변수에 저장할 수 있는 특징이 있어서 다른함수에서도 불러쓸 수 있다.</p>
+    <script>
+        let d = function(){
+            alert("d함수 실행")
+        }
+        function e(g){
+            alert("나는 e함수다")
+            g()
+        }
+        // e(d)
+        // e(function(){alert("하하")})
+    </script>
+    <p>화살표함수 표현방식</p>
+    <p>화살표함수는 매개변수가 한개인경우 괄호를 생략해서 표현할 수 있다.</p>
+    <script>
+        let abc = (name)=>{
+            alert("ABC함수 호출!"+name)
+            return {name:name}
+        }
+        console.log(abc("우민지"))
+    </script>
+</body>
+</html>
