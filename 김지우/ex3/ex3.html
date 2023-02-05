@@ -12,19 +12,30 @@
         2.함수의 매개변수로 사용되는 데이터형태는 배열로 한다.
         3.리턴은 배열 원소의 총합을 숫자데이터로 리턴하도록 한다.
      -->
+   
      <script>
-       let array = [1,2,3,4,5,6,7,8,9,10]
+
+        let array2 = [1,2,3,4,5,6,7,8,9,10];
+        let array3 = [0,1,2,3,4]
+        let total = 0;  // 선언과 동시에 초기화.
+        
+        function sumReturn(result){
+            let sum = 0;
+            for(let i =0; i < result.length; i++){
+                
+                sum+=result[i];
+
+                // return 
+            }
+            console.log(sum);
+            return sum;
+        }
+        alert(sumReturn(array3)+sumReturn(array2))
+        
        
 
-       function sumList(outArray){
-        let sum = 0;
-        for(let i=0; i<outArray.length ; i++){
-          sum+=outArray[i]
-        }
-        return sum
-       }
-       console.log(sumList(array))
         
+    
      </script>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항연산자</title>
+</head>
+<body>
+    <h1>삼항연산자</h1>
+    <p>조건문으로 사용되는 표현식</p>
+    <p>기본형태 [조건?조건이true일때남겨지는 값:조건이false일때 남겨지는 값]</p>
+    <script>
+        let a = 11
+        console.log((a>10)?"10보다크다":"10보다작다")
+
+        if(a>10){
+            return "10보다크다"
+        }else{
+            return "10보다작다"
+        }
+
+        let b
+        console.log(b?"A":"B")
+
+        function box(){
+            console.log("box함수 실행")
+            return false
+        }
+        box()?10:12
+        if(!(box()?10:12)?true:false){
+            alert("TEST")
+        }
+
+
+
+    </script>
+</body>
+</html>

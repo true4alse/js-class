@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수활용</title>
+</head>
+<body>
+    <h1>문제1</h1>
+    <pre>
+        사용자의 이름과 국어점수 영어점수 수학점수를 객체로 하는 데이터형태를 매개변수로해서
+        (국어영어수학점수는 배열데이터로 객체안에 저장)
+
+        평균값을 계산하여 
+        평균값이 90점 이상인 경우 A등급
+                80점 이상인 경우 B등급
+                70점 이상인 경우 C등급 
+                그렇지않은 경우 D등급을 
+        나타낼 수 있도록 하는 함수를 구현해보시오
+        1.평균 값을 계산하여 리턴하는 함수(매개변수는 객체데이터)
+        2.평균 값에 대해서 등급을 리턴하는 함수(매개변수는 숫자데이터)
+    </pre>
+    <script>
+        let person = {
+            name:"정현진",
+            score:[100,90,80]
+        }
+        function getAver(personObj){
+            let sum = 0;
+            for(let i=0 ; i<personObj.score.length ; i++){
+                sum+=personObj.score[i]
+            }
+            return Math.round(sum/personObj.score.length);
+        }        
+        // console.log(getAver(person))
+
+        function getGrade(aver){
+            let grade;
+            if(aver>=90){
+                grade="A"
+            }else if(aver>=80){
+                grade="B"
+            }else if(aver>=70){
+                grade="C"
+            }else{
+                grade="D"
+            }
+            return grade
+        }
+        console.log(getGrade(getAver(person)))
+
+    </script>
+</body>
+</html>
