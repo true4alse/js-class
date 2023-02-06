@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숙제</title>
+</head>
+<body>
+    <h1>숙제</h1>
+    <pre>
+      문제)
+      제시된 객체를 확인한 후
+      제시한 함수를 사용하여
+      가장 평균 점수가 높은 학생 객체를 리턴하는 함수를 만들어보세요.
+    </pre>
+    <script>
+        let students = [
+            {name:"영수",age:22,scoreAver:{ko:43,en:100,math:100}},
+            {name:"민지",age:22,scoreAver:{ko:87,en:83,math:91}},
+            {name:"은우",age:22,scoreAver:{ko:99,en:97,math:86}},
+            {name:"지우",age:22,scoreAver:{ko:92,en:84,math:99}}
+        ]
+
+        function getAver(scoreObj){
+            return Math.round((scoreObj.ko+scoreObj.en+scoreObj.math)/3)
+        }
+
+        function getHighScoreStudent(array){
+            
+        }
+    </script>
+        
+</body>
+</html>
