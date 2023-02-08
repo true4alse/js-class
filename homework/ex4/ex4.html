@@ -27,8 +27,24 @@
         }
 
         function getHighScoreStudent(array){
-            
+            let result = getAver(array[0].scoreAver)
+            let idx = 0;
+            for(let i=0 ; i<array.length ; i++){
+                if(getAver(array[i].scoreAver) > result){
+                    result = getAver(array[i].scoreAver)
+                    idx = i
+                }
+            }
+            return array[idx],result
         }
+        console.log(getHighScoreStudent(students))
+
+        console.log(students[a()])
+        console.log(students[a?1:2])
+        function a(){
+            return 1
+        }
+        
     </script>
         
 </body>
