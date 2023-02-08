@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숙제</title>
+</head>
+<body>
+    <h1>숙제</h1>
+    <pre>
+      문제)
+      제시된 객체를 확인한 후
+      제시한 함수를 사용하여
+      가장 평균 점수가 높은 학생 객체를 리턴하는 함수를 만들어보세요.
+    </pre>
+<!--    <script>-->
+<!--        let students = [-->
+<!--            {name:"영수",age:22,scoreAver:{ko:43,en:100,math:100}},-->
+<!--            {name:"민지",age:22,scoreAver:{ko:87,en:83,math:91}},-->
+<!--            {name:"은우",age:22,scoreAver:{ko:99,en:97,math:86}},-->
+<!--            {name:"지우",age:22,scoreAver:{ko:92,en:84,math:99}}-->
+<!--        ]-->
+
+<!--        function getAver(scoreObj){-->
+<!--            return Math.round((scoreObj.ko+scoreObj.en+scoreObj.math)/3)-->
+<!--        }-->
+
+<!--        function getHighScoreStudent(array){-->
+<!--            -->
+<!--        }-->
+<!--    </script>-->
+
+
+    <script>
+        let students = [
+            {name:"영수",age:22,scoreAver:{ko:43,en:100,math:100}},
+            {name:"민지",age:22,scoreAver:{ko:87,en:83,math:91}},
+            {name:"은우",age:22,scoreAver:{ko:99,en:97,math:86}},
+            {name:"지우",age:22,scoreAver:{ko:92,en:84,math:99}}
+        ];
+
+
+
+
+        // 각 학생의 점수평균값 구하는 함수
+        function getAver(scoreObj){
+
+            // let num = 0;
+            let result = []
+
+            for(var i = 0; i < scoreObj.length; i++){
+
+                let num = 0;
+                num += Math.round((scoreObj[i].scoreAver.ko + scoreObj[i].scoreAver.en + scoreObj[i].scoreAver.math) / 3);
+
+                result.push(num)
+                
+
+                // if(scoreObj[0]){
+                //     num += Math.round((scoreObj[0].scoreAver.ko + scoreObj[0].scoreAver.en + scoreObj[0].scoreAver.math) / 3);
+                //     return num;
+                // }else if(scoreObj[1]){
+                //     num += Math.round((scoreObj[1].scoreAver.ko + scoreObj[1].scoreAver.en + scoreObj[1].scoreAver.math) / 3);
+                //     return num;
+                // }
+            }
+            return result
+        };
+
+
+        function getHighScoreStudent(array){
+            console.log(array);
+        };
+
+        console.log(getAver(students))
+        // console.log(getAver(students));
+        // console.log(getHighScoreStudent(getAver()));
+
+
+    </script>
+
+
+
+
+
+
+    <h1>질문리스트(수업 외)</h1>
+    <ol>
+        <li> javascript "this" 사용법(내가 클릭한 오브젝트를 리턴하는 법)</li>
+        <li> ":" 은 무엇인지..?</li>
+        <li> "for in" 문 사용법</li>
+        <li> ex) copy[cate] 에 []은 뭔지..? 배열을 쓴것같은데 저렇게 쓰는게 맞는지..? 보통 copy[0] 이렇게 쓰지 않나..?</li>
+        <li> for문 - break , switch 는 어떻게 사용하는지?</li>
+        <li> javascript 에서 item 은 무엇인지?</li>
+    </ol>  
+</body>
+</html>
