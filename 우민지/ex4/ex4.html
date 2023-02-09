@@ -21,30 +21,17 @@
             {name:"은우",age:22,scoreAver:{ko:99,en:97,math:86}},
             {name:"지우",age:22,scoreAver:{ko:92,en:84,math:99}}
         ]
-
         function getAver(scoreObj){
+            let sum;
+            for(let i=0; i<scoreObj.scoreAver; i++){
+                sum+=scoreObj.scoreAver[i];
+            }
             return Math.round((scoreObj.ko+scoreObj.en+scoreObj.math)/3)
         }
 
         function getHighScoreStudent(array){
-            let result = getAver(array[0].scoreAver)
-            let idx = 0;
-            for(let i=0 ; i<array.length ; i++){
-                if(getAver(array[i].scoreAver) > result){
-                    result = getAver(array[i].scoreAver)
-                    idx = i
-                }
-            }
-            return array[idx],result
         }
-        console.log(getHighScoreStudent(students))
-
-        console.log(students[a()])
-        console.log(students[a?1:2])
-        function a(){
-            return 1
-        }
-        
+        console.log(getHighScoreStudent(getAver(students)))
     </script>
         
 </body>
