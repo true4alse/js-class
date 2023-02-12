@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>숙제</title>
+  </head>
+  <style>
+    /*reset*/
+*{margin:0;padding:0;}
+ol,ul{list-style:none;}
+a{text-decoration:none;color:#000;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;font-size:inherit;}
+i,em{font-style:normal;}
+b,strong{font-weight:normal;}
+table{border-collapse:collapse;}
+
+
+.mainContent{
+    display: flex;
+    /*border:1px solid orange;*/
+    box-sizing: border-box;
+    float: left;
+}
+
+.contetnsWrap{
+    /*border:1px solid red;*/
+    box-sizing: border-box;
+    margin-top: 230px;
+}
+
+.cL{
+    /*border:1px solid blue;*/
+    box-sizing: border-box;
+}
+
+.movieList{
+    box-sizing: border-box;
+    width:1080px;
+    margin: 20px auto;
+    display: flex;
+}
+
+.movieList:after{display: block;content: "";clear: both;}
+
+
+.movieList > h2{
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.movieList h2 span{
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 2px solid #ddd;
+    box-sizing: border-box;
+    font-weight: 500;
+    color:#848383;
+}
+
+.movieList a{
+    border:2px solid #ccc;
+    box-sizing: border-box;
+    position: absolute;
+    right: 0px;
+    border-radius: 20px;
+    padding: 4px 8px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.movieList ul{
+    box-sizing: border-box;
+    /*width: calc(100% / 5);*/
+}
+
+.movieList ul li{
+    margin-right: 10px;
+}
+.movieList ul li:last-of-type{margin-right: 0px;}
+
+
+figure{
+    width:100%;
+    height:300px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+figure img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+}
+
+.conTitle{
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.sign{
+    box-sizing: border-box;
+    text-align: center;
+    border-right:1px solid #ddd;
+    margin-right: 8px;
+}
+
+.sign img{
+    box-sizing: border-box;
+    width:20px;
+    height:20px;
+    position: relative;
+    top: 4px;
+    left: -3px;
+}
+
+.mainconText{
+    box-sizing: border-box;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+
+  </style>
+  <body>
+    <ul class="movieList">
+      <li>
+
+
+        <!-- <h2>무비차트 | <span>상영예정작</span><a href="#">전체보기 ></a></h2>
+        <div class="movieList">
+          <figure>
+            <img src="./img/86072_320.jpg" alt="아바타-물의 길 썸네일">
+          </figure>
+          <h3 class="conTitle"></h3>
+          <p class="mainconText">
+              <span class="sign">
+                <img src="./img/egg.png" alt="에그이미지">
+                <i class="percent"></i>
+              </span>
+            <span class="reserRate">예매율&nbsp;</span>
+          </p>
+        </div> -->
+
+
+
+      </li>
+    </ul>
+    <!--
+       img폴더안의 완성예제 사진을 참고하여 script태그에 주어진 배열을 매개변수로 하여
+      li태그의 형태를 문자데이터로 리턴하는 함수를 제작하여
+      홈페이지를 완성해보세요!
+      css는 자유.(해도되구 안해두됩니다!)
+    -->
+    <script>
+
+      let movieList = [
+        { title : "아바타-물의 길", imgFile:"86072_320.jpg", rate:44.6 , eggrate:96},
+        { title : "방탄소년단 옛 투 컴", imgFile:"86729_320.jpg", rate:12.1,eggrate:99},
+        { title : "더 퍼스트 슬램덩크", imgFile:"86720_320.jpg", rate:12.1,eggrate:97},
+        { title : "교섭", imgFile:"86157_320.jpg", rate:15.9,eggrate:99},
+        { title : "유령", imgFile:"86719_320.jpg", rate:19.8,eggrate:99},
+      ];
+
+
+      function inputListTags(array){
+        // 이 함수를 완성해보세요!!
+        // 이 함수는 array를 매개변수로하여 li태그들을 조합하여 리턴하는 함수입니다.
+        // ex1때 했던 소스를 참고하시면 좋아요. 다만 올바른 함수를 제작하여 아래 수정금지부분처럼
+        // 함수를 호출했을 때 정상적으로 홈페이지에 보여야합니다.
+
+
+        let move = "";
+
+        for(var i =0; i < array.length; i++){
+        
+          move += '<li>'+
+                    '<figure>'+
+                      '<img src="./img/'+array[i].imgFile+'" alt="'+ array[i].title + '">'+
+                    '</figure>'+
+                    '<h3 class="conTitle">'+ array[i].title + '</h3>'+
+                    ' <p class="mainconText">'+
+                      '<span class="sign">'+
+                        '<img src="./img/egg.png" alt="에그이미지">'+
+                        '<i class="percent">'+array[i].eggrate+'</i>%'+
+                      '</span>'+
+                      '<span class="reserRate">예매율&nbsp;'+array[i].rate+'%</span>'+
+                    ' </p>'+
+                  '</li>'
+
+
+                console.log(move);
+        }
+
+        return move;
+
+        
+      }
+
+      //////////////////////수정금지//////////////////////////
+      document.querySelector(".movieList").innerHTML = inputListTags(movieList)
+      //////////////////////수정금지//////////////////////////
+
+    </script>
+
+  </body>
+</html>
