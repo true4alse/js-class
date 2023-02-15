@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 조작 필수 함수</title>
+</head>
+<body>
+    <h1>배열필수함수(자동화)</h1>
+
+    <p>database서버에서 응답받은 데이터를 2차적으로 자바스크립트 표현식에 맞게 수정하기 위해서는 배열을 자유롭게 다룰 줄 알아야함</p>
+
+    <h2>index</h2>
+    <ul>
+        <li>push()</li>
+    </ul>
+
+    <h2>push()</h2>
+    <p>배열 끝에 원소를 추가</p>
+    <script>
+        let num = [1,2,3,4,5]
+        num.push("육")
+        num.push(7,8)
+        num.push({ko:100,en:90})
+        num.push(function(){alert("TEST1")})
+        num.push(()=>{alert("TEST2")})
+        console.log(num)
+        // num[9]()
+        // num[10]()
+    </script>
+
+    <h2>pop()</h2>
+    <p>배열의 마지막 원소를 제거</p>
+    <script>
+        let num2 = [3,4,5]
+        num2.pop()
+        console.log(num2)
+    </script>
+
+    <h2>concat()</h2>
+    <p>두개 혹은 더많은 배열을 합칠 때 사용</p>
+    <p>원래 사용한 배열은 바꾸지 않고 새로운 배열을 만들어서 리턴하는 함수</p>
+    <script>
+        let n1 = [1,2,3]
+        let n2 = ["사","오","육"]
+        let n3 = n1.concat(n2)
+        let n4 = n2.concat(n1)
+        console.log(n4)
+        console.log(n1,n2)
+    </script>
+
+    <h2>reverse()</h2>
+    <p>배열의 순서를 뒤집어주는 함수</p>
+    <script>
+        let n11 = [1,2,3,5,4]
+        n11.reverse()
+        console.log(n11)
+    </script>
+
+    <h2>join()</h2>
+    <p>배열을 문자열로 리턴하는 함수</p>
+    <p>join()함수의 인자로는 구분자(문자)를 넣어준다. (구분자가 없다면 기본값이 콤마(,)로 설정되어 있다.</p>
+    <p>join()함수는 원본 데이터를 수정하지않고 계산된 새로운 문자를 리턴하는 함수</p>
+    <script>
+        let months = ["1월","2월","3월","4월","5월"]
+        console.log(months.join(""))
+        console.log(months)
+    </script>
+
+    <h2>split()</h2>
+    <p>문자열을 배열로 리턴하는 함수</p>
+    <p>문자데이터를 인자로 사용된 특수한 구분문자로 쪼개서 배열로 리턴하는 함수</p>
+    <p>원본데이터는 수정하지 않고 계산된 새로운 배열을 리턴하는 함수</p>
+    <script>
+        let mynum = "010-6262-9996"
+        console.log(mynum.split("-"))
+        console.log(mynum)
+    </script>
+</body>
+</html>
