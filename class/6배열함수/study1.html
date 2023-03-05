@@ -98,5 +98,108 @@
         console.log(sp)
         console.log(loveYears)
     </script>
+
+    <h2>map</h2>
+    <p>배열에 사용할 수 있는 함수</p>
+    <p>배열에 속한 각각의 원소에 대해서 입력한 콜백함수를 실행하고 그 결과로, 새로운 배열을 리턴하는 함수</p>
+    <p>map이라는 함수는 매개변수로 콜백함수를 받는다</p>
+    <p>map에 사용되는 콜백함수의 매개변수는 첫번째 값은 map함수를 사용한 배열의 원소의 값이 저장된다</p>
+    <p>map에 사용되는 콜백함수 선택배열.map(function(선택배열의값,선택배열의순번,원본선택배열){})</p>
+    <script>
+        let month = [1,2,3,4,5]
+        let resultM = month.map(num=>{
+            return num+"월"
+        })
+        console.log(resultM)
+
+        let computerSell = [1000,1100,1200,1300]
+        let resultCom = computerSell.map(function(value,index,array){
+            return {
+                original:array,
+                modified:(index+1)+"월 순이익: "+value
+            }
+        })
+        console.log(resultCom)
+    </script>
+
+    <h2>find</h2>
+    <p>find함수는 선택한 배열에서 특정 조건을 만족하는 원소를 찾아서 리턴하는 함수</p>
+    <p>find함수는 리턴의 조건에서 조건에 만족되는 원소가 한개만 리턴된다(원소의 형태로)</p>
+    <p>find함수는 원소의 작은순번부터 차례대로 탐색하기 때문에 조건에 맞는 원소를 찾으면 종료된다</p>
+    <script>
+        let animals = [
+            {
+                name : "고양이",
+                age : 1
+            },
+            {
+                name : "강아지",
+                age:2
+            },
+            {
+                name:'호랑이',
+                age:4
+            },
+            {
+                name : '사자',
+                age:3
+            }
+        ]
+        let resultAnimals = animals.find((value,index,array)=>{
+            return array[index].age>2
+        })
+        console.log(resultAnimals)
+    </script>
+
+    <h2>filter</h2>
+    <p>find함수가 특정조건에 맞는 원소 한개를 선택한 것이라면 filter함수는 사용방식은 find함수와 똑같지만 특정조건에 맞는 원소 여러개를 새로운 배열을 만들어서 리턴해주는 함수</p>
+    <script>
+        const ourStudents = [
+            {
+                name:"우민지",
+                score:96
+            },
+            {
+                name:"김지우",
+                score:96
+            },
+            {
+                name:"정현진",
+                score:100
+            },
+            {
+                name:"정혜령",
+                score:72
+            },
+            {
+                name:"김선우",
+                score:79
+            }
+        ]
+
+        const lowScoreStudents = ourStudents.filter(function(value,index,array){
+            return array[index].score < 80
+        })
+        console.log(lowScoreStudents)
+    </script>
+
+    <h2>forEach</h2>
+    <p>선택한 배열의 각 원소에대해 입력한 콜백함수를 실행시켜주는 함수</p>
+    <p>따로 리턴하는 값이 없고 실행만 시킨다</p>
+    <script>
+        let rn = ['1번','2번','3번','4번']
+        rn.forEach(function(value,index,array){
+            console.log(value,index,array)
+        })
+
+        let tagPs = document.getElementsByTagName('p')
+        // tagPs.forEach(function(value,index,array){
+        //     console.log(array)
+        // })
+
+        
+        
+    </script>
+
 </body>
 </html>
