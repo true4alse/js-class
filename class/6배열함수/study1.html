@@ -99,6 +99,7 @@
         console.log(loveYears)
     </script>
 
+    <h1>배열요소(원소)순환함수</h1>
     <h2>map</h2>
     <p>배열에 사용할 수 있는 함수</p>
     <p>배열에 속한 각각의 원소에 대해서 입력한 콜백함수를 실행하고 그 결과로, 새로운 배열을 리턴하는 함수</p>
@@ -193,13 +194,26 @@
         })
 
         let tagPs = document.getElementsByTagName('p')
-        // tagPs.forEach(function(value,index,array){
-        //     console.log(array)
-        // })
-
-        
-        
     </script>
+
+    <h2>sort</h2>
+    <p>배열의 원소의 값들을 분류할때 사용하는 함수 - 원소를 정렬할 때 사용(큰값부터 작은값으로 or 작은값부터 큰값으로)</p>
+    <p>선택된 배열을 사용하여 정렬한 뒤 새로운 배열을 리턴하는 함수</p>
+    <p>return 값을 앞에있는 원소의 값 - 뒤에 있는 원소의 값 -> 작은차순부터 정렬</p>
+    <script>
+        let studentsNum = [3,24,17,53,99,97]
+        let setted = studentsNum.sort(function(a,b){
+            return a-b
+        }) 
+        console.log(setted)
+
+        let ss = [{age:1},{age:22},{age:5}]
+        ss.sort(function(a,b){
+            return a.age - b.age
+        })
+        console.log(ss)
+    </script>
+    <!-- reduce -->
 
 </body>
 </html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자함수</title>
+</head>
+<body>
+    <h1>생성자함수</h1>
+    <p>객체를 생성하여 리턴하는 함수</p>
+    <script>
+        
+        // ES5문법
+        // function Person(username,userage){
+        //     this.name = username;
+        //     this.age = userage;
+        //     this.greet = function(){
+        //         document.write("안녕하세요 저는 "+this.name+"입니다. 저의 나이는 "+this.age+"살 입니다.<br>")
+        //     }
+        // }
+
+        // ES6문법 - class
+        class Person{
+            constructor(username,userage){
+                this.name = username;
+                this.age = userage;
+            }
+            greet(){
+                document.write("안녕하세요 저는 "+this.name+"입니다. 저의 나이는 "+this.age+"살 입니다.<br>")
+            }
+        }
+        
+        let person1 = new Person("민지",28)
+        let person2 = new Person("지우",28)
+        person1.greet()
+        person2.greet()
+
+        let person3 = {
+            name : "정현진",
+            age : 38,
+            greet : function(){
+                document.write("안녕하세요 저는 "+this.name+"입니다<br>")
+            }
+        }
+        let person4 = {
+            name : "김선우",
+            age : 24,
+            greet : function(){
+                document.write("안녕하세요 저는 "+this.name+"입니다<br>")
+            }
+        }
+        let person5 = {
+            name : "정혜령",
+            age : 28,
+            greet : function(){
+                document.write("안녕하세요 저는 "+this.name+"입니다<br>")
+            }
+        }       
+        person3.greet()
+        person4.greet()
+        person5.greet()
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전개연산자</title>
+</head>
+<body>
+    <h1>전개연산자</h1>
+    <p>...매개변수이름 으로 함수를 등록하면 내부적으로는 배열자료형태로 사용된다</p>
+    <p>...전개연산자 매개변수는 항상 마지막에 등록해야 한다.</p>
+    <p>...전개연산자 매개변수는 함수당 1개만 사용할 수 있다.</p>
+    <script>
+        function a(age,...restname){
+            console.log(age,restname)
+            console.log(arguments[3])
+        }
+        a(20,"우민지","김지우","정현진")
+
+        let aa = [1,2,3]
+        let bb = [4,5,6]
+        // let cc = bb.concat(aa)
+        let cc = [...aa,...bb]
+        console.log(cc)
+        let wmj = {ko:100,en:100,ma:100}
+        let kjw = {ko:100,en:100,ma:100}
+
+        let result = [{...kjw},{...wmj}]
+        console.log(result)
+    </script>
+</body>
+</html>

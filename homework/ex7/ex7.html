@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열정렬</title>
+</head>
+<body>
+    <script>
+        let student = [
+            {
+                name:"민지",
+                score:{
+                    html:100,
+                    css:95,
+                    js:96,
+                    mysql:20
+                }
+            },
+            {
+                name:"지우",
+                score:{
+                    html:98,
+                    css:97,
+                    js:90,
+                    mysql:32
+                }
+            },
+            {
+                name:"현진",
+                score:{
+                    html:100,
+                    css:100,
+                    js:100,
+                    mysql:100
+                }
+            },
+            {
+                name:"상우",
+                score:{
+                    html:68,
+                    css:77,
+                    js:40,
+                    mysql:2
+                }
+            },
+            {
+                name:"민선",
+                score:{
+                    html:38,
+                    css:57,
+                    js:80,
+                    mysql:12
+                }
+            }
+        ]
+    </script>
+    <p>위와 같은 데이터가 있다. 학생들의 스코어의 평균점수가 70점 이상인 학생들이 점수가 높은 점수부터 낮은점수순으로 정렬될 수 있도록 소스코드를 작성해보시오.
+    최종적으로는 [{},{},{}]
+    </p>
+    <script>
+        let resultStudent = student.sort(function(a,b){
+            return (b.score.html+b.score.css+b.score.js+b.score.mysql)/4 - (a.score.html+a.score.css+a.score.js+a.score.mysql)/4
+        })
+        console.log(resultStudent)
+        let passStu = resultStudent.filter(function(value,index,array){
+            return (array[index].score.html+array[index].score.css+array[index].score.js+array[index].score.mysql)/4 > 70
+        })
+        console.log(passStu)
+    </script>
+</body>
+</html>
