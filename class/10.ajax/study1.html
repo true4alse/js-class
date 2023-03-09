@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+<body>
+    <script>
+        let request = new XMLHttpRequest()
+        request.onreadystatechange = function(){
+            if(request.readyState === XMLHttpRequest.DONE){
+                if(request.status===200){
+                    console.log(request.responseText)
+                    let result = JSON.parse(request.responseText)
+                    console.log(result)
+                    document.write(result.name)
+                    document.write(result.age)
+                }else{
+                    console.log("error")
+                }
+            }
+        }
+        request.open('get',"./study2.txt")
+        request.send()
+        
+    </script>
+</body>
+</html>
